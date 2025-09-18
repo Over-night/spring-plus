@@ -27,8 +27,15 @@
 - JPQL을 통한 필터링 기능 또한 코드 상 구현 (```findByWeatherAndModifiedAt```)
 
 **4. 테스트 코드 퀴즈 - 컨트롤러 테스트의 이해**
-
+[UserAdminController.java](src/main/java/org/example/expert/domain/user/controller/UserAdminController.java)
 ```invalidRequestExceptionException``` 에 대응하여 테스트 수정
 - ```invalidRequestExceptionException```은 ```400 BAD REQUEST```을 반환하도록 설계됨
 - ```getTodo``` 메소드는 찾으려는 ID가 없을 경우 위 예외를 반환하도록 설계됨
 - ```200 OK```로 예측하는 구문을 ```400 BAD REQUEST```으로 예측하도록 변경
+
+**5. 코드 개선 퀴즈 - AOP의 이해**
+
+```@After``` 어노테이션 수정
+- 설계 상 메소드가 실행 전 해당 코드가 동작해야하나 ```@After```은 잘못된 순서 지정
+- 명세서 상 ```UserAdminController.changeUserRole()``` 메서드를 대상으로 해야하나 ```UserController.getUser()```를 대상으로 함
+- 관련 이슈를 설계 의도에 맞도록 어노테이션 및 메소드명 수정
