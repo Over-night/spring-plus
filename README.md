@@ -54,5 +54,10 @@
 - ```EntityGraph``` 어노테이션을 를 사용해 ```user```을 즉시 로딩
 - ```Fetch Join```을 활용하여 Comment와 User 데이터를 한번에 가져오는 방안도 있음
 
+**8. QueryDSL**
 
+```QueryDSL```패키지를 gradle에 추가 후 코드에 적용
+- ```JPAQueryFactory``` 컨피그 설정으로 엔티티 메니저에 쿼리를 날림
+- ```TodoQueryDSLRepository``` 인터페이스와 Implement 클래스로 ```findByIdWithUser``` 메소드를 ```QueryDSL```로 구현
+- ```TodoRepository```가 ```TodoQueryDSLRepository```을 상속받아 QueryDSL 적용
 
