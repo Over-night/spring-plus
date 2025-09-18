@@ -25,3 +25,10 @@
 - ```weather``` ```from``` ```to``` 쿼리파라미터 조회 및 Specification에 반영
 - Repository에서 ```JpaSpecificationExecutor```를 상속받도록 구현
 - JPQL을 통한 필터링 기능 또한 코드 상 구현 (```findByWeatherAndModifiedAt```)
+
+**4. 테스트 코드 퀴즈 - 컨트롤러 테스트의 이해**
+
+```invalidRequestExceptionException``` 에 대응하여 테스트 수정
+- ```invalidRequestExceptionException```은 ```400 BAD REQUEST```을 반환하도록 설계됨
+- ```getTodo``` 메소드는 찾으려는 ID가 없을 경우 위 예외를 반환하도록 설계됨
+- ```200 OK```로 예측하는 구문을 ```400 BAD REQUEST```으로 예측하도록 변경
