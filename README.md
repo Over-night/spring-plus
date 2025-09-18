@@ -39,3 +39,12 @@
 - 설계 상 메소드가 실행 전 해당 코드가 동작해야하나 ```@After```은 잘못된 순서 지정
 - 명세서 상 ```UserAdminController.changeUserRole()``` 메서드를 대상으로 해야하나 ```UserController.getUser()```를 대상으로 함
 - 관련 이슈를 설계 의도에 맞도록 어노테이션 및 메소드명 수정
+
+### 2번문제
+**6. JPA Cascade**
+
+```JPA Cascade```의 ```CascadeType.PERSIST``` 속성 이용
+- 부모 엔티티가 저장될때, 연관된 자식 엔티티도 함께 저장되도록 함
+- 해당 속성을 지정해 todo가 저장될 때 todo의 manager도 함께 저장되로록 설계
+
+
