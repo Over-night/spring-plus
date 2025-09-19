@@ -3,6 +3,7 @@ package org.example.expert.domain.user.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.example.expert.domain.auth.exception.AuthException;
 import org.example.expert.domain.common.dto.AuthUser;
 import org.example.expert.domain.common.entity.Timestamped;
 import org.example.expert.domain.user.enums.UserRole;
@@ -38,7 +39,11 @@ public class User extends Timestamped {
     }
 
     public static User fromAuthUser(AuthUser authUser) {
-        return new User(authUser.getId(), authUser.getEmail(), authUser.getNickname(), authUser.getUserRole());
+        return new User(authUser.getId(), authUser.getEmail(), authUser.getNickname(),
+                authUser.getAuthorities().stream()
+                        .findFirst()
+                        .map(a -> UserRole.valueOf(a.getAuthority()))
+                        .orElseThrow(() -> new AuthException("권한이 존재하지 않습니다.")));
     }
 
     public void changePassword(String password) {
@@ -49,5 +54,3 @@ public class User extends Timestamped {
         this.userRole = userRole;
     }
 }
-
-// TODO: User Nickname update 메소드 생성 고려?
