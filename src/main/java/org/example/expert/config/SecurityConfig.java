@@ -46,6 +46,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(request -> request.getRequestURI().startsWith("/auth")).permitAll()
                         .requestMatchers("/admin").hasAuthority(UserRole.ROLE_ADMIN.getUserRole())
+                        .requestMatchers("/test").hasAuthority(UserRole.ROLE_ADMIN.getUserRole())
                         .requestMatchers("/open").permitAll() // `/open`은 아무나 접근 가능
                         .anyRequest().authenticated() // 다른 요청들은 authentication 필요
                 )
