@@ -61,3 +61,9 @@
 - ```TodoQueryDSLRepository``` 인터페이스와 Implement 클래스로 ```findByIdWithUser``` 메소드를 ```QueryDSL```로 구현
 - ```TodoRepository```가 ```TodoQueryDSLRepository```을 상속받아 QueryDSL 적용
 
+**9. Spring Security**
+
+```Spring Security```패키지를 gradle에 추가 후 코드에 적용
+- ```Filter``` ```Argument Resolver``` 등의 코드를 Spring Security에 맞게 대체
+- 권한 인증 로직 일부 수정 및 테스트코드 검증 추가 
+
